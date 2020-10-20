@@ -10,6 +10,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework.Constraints;
 using System.Threading;
 using System.Security.Cryptography.X509Certificates;
+using System.Runtime.CompilerServices;
 
 namespace WestpacPractical
 {
@@ -118,7 +119,30 @@ namespace WestpacPractical
                 return true;
             else
                 return false;
-               
+                           
+        }
+        public void Populatekiwisaverbalance(string kiwisaverbal)
+        {
+            driver.FindElement(By.XPath("//div[@help-id='KiwiSaverBalance']//input")).Click();
+            driver.FindElement(By.XPath("//div[@help-id='KiwiSaverBalance']//input")).SendKeys(kiwisaverbal);
+        }
+        public void Populatecontrib(string currentcontribution)
+        {
+            driver.FindElement(By.XPath("//div[@help-id='VoluntaryContributions']//input")).Click();
+            driver.FindElement(By.XPath("//div[@help-id='VoluntaryContributions']//input")).SendKeys(currentcontribution);
+
+        }
+        public void Selectfrequency(string frequency)
+        {
+            frequency = frequency.Trim();
+            driver.FindElement(By.XPath("//div[@class='well-value ng-binding']/span[@class='ng-binding ng-scope']")).Click();
+            driver.FindElement(By.XPath("//div//span[@class='ng-binding ng-scope' and text() ='" + frequency + "']")).Click();
+        }
+        public void Populatesavingsgoal(string savingsgoal)
+        {
+            driver.FindElement(By.XPath("//div[@help-id='SavingsGoal']//input")).Click();
+            driver.FindElement(By.XPath("//div[@help-id='SavingsGoal']//input")).SendKeys(savingsgoal);
+
         }
 
     }

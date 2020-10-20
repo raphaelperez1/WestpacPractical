@@ -67,5 +67,28 @@ namespace WestpacPractical.Stepdefinition
             _basepage = new BasePage();
             _basepage.CloseBroser();
         }
+        [Given(@"I have current Kiwisaverbalance of(.*)")]
+        public void PopulateKiwisaverBalance(string p0)
+        {
+            _kiwisaverhome.Populatekiwisaverbalance(p0);
+        }
+        [Given(@"I voluntary contribute (.*)")]
+        public void Populatecontrib(string p0)
+        {
+            _kiwisaverhome.Populatecontrib(p0);
+        }
+        [Given(@"I select frequency as(.*)")]
+        public void SelectFrequency(string p0)
+        {
+            _kiwisaverhome.Selectfrequency(p0);
+        }
+        [Given(@"I enter savings goal retirement(.*)")]
+        public void PopulateSavingsGoal(string p0)
+        {
+            _kiwisaverhome.Populatesavingsgoal(p0);
+        }
+
+
+
     }
 }
